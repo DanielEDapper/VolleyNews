@@ -38,6 +38,63 @@
         .texto_paragrafo{
             text-align: justify;
         }
+
+        /*-------------*/
+        .carousel {
+        position: relative;
+        width: 80%;
+        margin: 40px auto;
+        overflow: hidden;
+        }
+
+        .slides {
+        display: flex;
+        transition: transform 0.5s ease;
+        }
+
+        .slide {
+        min-width: 100%;
+        height: 250px;
+        background: #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        }
+
+        /* Botões */
+        .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: transparent;
+        border: none;
+        font-size: 30px;
+        cursor: pointer;
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        /* Indicadores */
+        .dots {
+        text-align: center;
+        margin-top: 10px;
+        }
+
+        .dot {
+        height: 8px;
+        width: 8px;
+        margin: 5px;
+        background: #bbb;
+        display: inline-block;
+        border-radius: 50%;
+        cursor: pointer;
+        }
+
+        .dot.active {
+        background: #555;
+        }
     </style>
 </head>
 <body>
@@ -53,6 +110,26 @@
         
         </div>
     </header>
+    <div class="carousel">
+        <div class="slides">
+            <div class="slide active">Slide 1</div>
+            <div class="slide">Slide 2</div>
+            <div class="slide">Slide 3</div>
+            <div class="slide">Slide 4</div>
+        </div>
+
+        <!-- Botões -->
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+
+        <!-- Indicadores -->
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
     <div class="noticias">
         <h1 style="text-align: center ; color: steelblue;">Principais Notícias</h1>
         <hr>
@@ -96,5 +173,6 @@
         </div>
 
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
