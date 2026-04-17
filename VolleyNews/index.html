@@ -9,9 +9,18 @@
         .cabecalho{
             background-color: #1f4e79;
             display: flex;
+            height: 50px;
             align-items: center;
             justify-content: space-between;
             padding: 10px 30px;
+            position: relative;
+        }
+        .conteudo-cabecalho {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 160px;
         }
         .esquerda_cabecalho,
         .direita_cabecalho {
@@ -23,20 +32,30 @@
             background-color: #1f4e79;
             border: 1px solid #2b6aa3;
             color: white;
+            font-weight: 500;
             border-radius: 5px;
             height: 30px;
+            padding: 0 10px;
 
             display: flex;
             align-items: center;   /* centraliza vertical */
             justify-content: center; /* centraliza horizontal */
         }
         .rodape{
+            display: flex;
             background-color: #1f4e79;
+            color: white;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+            height: 150px;
+            margin-top: 30px;
         }
         .esquerda_cabecalho{
             text-align: left;
         }
-        .titulo_cabecalho {
+        .titulo-cabecalho {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
@@ -45,6 +64,10 @@
         }
         .direita_cabecalho{
             text-align: right;
+        }
+
+        .noticias{
+            padding: 0 190px;
         }
         .primeira_noticia,
         .segunda_noticia,
@@ -60,6 +83,21 @@
         }
         .texto_paragrafo{
             text-align: justify;
+        }
+
+        .botao-mostrar-mais{
+            background-color: #1f4e79;
+            border: 1px solid #2b6aa3;
+            color: white;
+            font-weight: 600;
+            border-radius: 5px;
+            height: 40px;
+            padding: 0 20px;
+
+            display: flex;
+            align-items: center;
+            justify-items: center;
+            justify-self: center;
         }
          /*-------------*/
         .carousel {
@@ -121,15 +159,23 @@
 </head>
 <body>
     <header class="cabecalho">
-        <div class="esquerda_cabecalho">
-            <button class="botoes">Menu</button>
-            <button class="botoes">Times</button>
-        </div>
-        <div class="titulo_cabecalho">
-            <h1>VolleyNews</h1>
-        </div>
-        <div class="direita_cabecalho">
-        
+        <div class="conteudo-cabecalho">
+            <div class="esquerda_cabecalho">
+                <button class="botoes">
+                    <i data-lucide="menu"></i>  
+                </button>
+                <button class="botoes">
+                    <i data-lucide="shield"></i>  
+                    Times
+                </button>
+            </div>
+            <h1 class="titulo-cabecalho">VolleyNews</h1>
+            <div class="direita_cabecalho">
+                <button class="botoes">
+                    <i data-lucide="search"></i>
+                    BUSCAR
+                </button>
+            </div>
         </div>
     </header>
     <div class="carousel">
@@ -148,49 +194,59 @@
             <span class="dot"></span>
         </div>
     </div>
-    <div class="noticias">
-        <h1 style="text-align: center ; color:#1f4e79;;">Principais Notícias</h1>
-        <hr>
-        <div class="primeira_noticia">
-            <div class="imagens">
-                <img src="https://i.ytimg.com/vi/gcNMGeofpXk/hq720.jpg?v=69e023e9&sqp=CPjhhc8G-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDfDchnxo0dnkYXselXao7pOlkKXw" alt="Imagem">
+    <main>
+        <div class="noticias">
+            <div>
+
             </div>
-            <div class="textos">
-                <h3>Clássico das Multidões: Osasco e Gerdau Minas abrem semifinal da Superliga em duelo de gigantes</h3>
-                <p class="texto_paragrafo">A rivalidade mais tradicional do vôlei feminino brasileiro ganha um novo capítulo nesta segunda-feira, dia 13 de abril. O Osasco São Cristóvão Saúde recebe o Gerdau Minas no Ginásio José Liberatti para o jogo de abertura da semifinal da Superliga. Com ingressos esgotados e a promessa de caldeirão lotado, as equipes iniciam a disputa por uma vaga na grande final em um confronto que coloca frente a frente estrelas da Seleção Brasileira e um histórico recente de muito equilíbrio.</p>   
-            </div>   
-        </div>
-        <hr>
-        <div class="segunda_noticia">
-            <div class="imagens">
-                <img src="https://i.ytimg.com/vi/cAC5RnqO-p8/hq720.jpg?v=69dd3ed0&sqp=COCZ9s4G-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAR9kmIqYISDgtue1XzFcjZvbrqRg" alt="Imagem">
+            <h1 style="text-align: center ; color:#1f4e79;;">Principais Notícias</h1>
+            <hr>
+            <div class="primeira_noticia">
+                <div class="imagens">
+                    <img src="https://i.ytimg.com/vi/gcNMGeofpXk/hq720.jpg?v=69e023e9&sqp=CPjhhc8G-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDfDchnxo0dnkYXselXao7pOlkKXw" alt="Imagem">
+                </div>
+                <div class="textos">
+                    <h3>Clássico das Multidões: Osasco e Gerdau Minas abrem semifinal da Superliga em duelo de gigantes</h3>
+                    <p class="texto_paragrafo">A rivalidade mais tradicional do vôlei feminino brasileiro ganha um novo capítulo nesta segunda-feira, dia 13 de abril. O Osasco São Cristóvão Saúde recebe o Gerdau Minas no Ginásio José Liberatti para o jogo de abertura da semifinal da Superliga. Com ingressos esgotados e a promessa de caldeirão lotado, as equipes iniciam a disputa por uma vaga na grande final em um confronto que coloca frente a frente estrelas da Seleção Brasileira e um histórico recente de muito equilíbrio.</p>   
+                </div>   
             </div>
-            <div class="textos">
-                <h3>Duelo de Campeões: Praia Clube e Sesc Flamengo iniciam batalha por vaga na final em Uberlândia</h3>
-                <p class="texto_paragrafo">As semifinais da Superliga Feminina de Vôlei começam em clima de decisão no Triângulo Mineiro. Nesta segunda-feira, dia 13 de abril, o Dentil Praia Clube recebe o Sesc RJ Flamengo na Arena Dentil, em Uberlândia, para o primeiro jogo da série melhor de três. O confronto marca o encontro de dois dos projetos mais vitoriosos do vôlei nacional, prometendo ginásio lotado e um duelo tático de alto nível entre as equipes.</p>
-                
-            </div>   
-        </div>
-        <hr>
-        <div class="terceira_noticia">
-            <div class="imagens">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMGNyVx05qamMC3Os3eCR2tAZPaIgFFtfFMw&s" alt="Imagem">
+            <hr>
+            <div class="segunda_noticia">
+                <div class="imagens">
+                    <img src="https://i.ytimg.com/vi/cAC5RnqO-p8/hq720.jpg?v=69dd3ed0&sqp=COCZ9s4G-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAR9kmIqYISDgtue1XzFcjZvbrqRg" alt="Imagem">
+                </div>
+                <div class="textos">
+                    <h3>Duelo de Campeões: Praia Clube e Sesc Flamengo iniciam batalha por vaga na final em Uberlândia</h3>
+                    <p class="texto_paragrafo">As semifinais da Superliga Feminina de Vôlei começam em clima de decisão no Triângulo Mineiro. Nesta segunda-feira, dia 13 de abril, o Dentil Praia Clube recebe o Sesc RJ Flamengo na Arena Dentil, em Uberlândia, para o primeiro jogo da série melhor de três. O confronto marca o encontro de dois dos projetos mais vitoriosos do vôlei nacional, prometendo ginásio lotado e um duelo tático de alto nível entre as equipes.</p>
+                    
+                </div>   
             </div>
-            <div class="textos">
-                <h3>Sexta de Decisões: Osasco e Praia Clube buscam carimbar vaga na final da Superliga em noite de clássicos</h3>
-                <p class="texto_paragrafo">A Superliga Feminina pode conhecer suas finalistas nesta sexta-feira, 17 de abril, em uma noite de tensão máxima. Em Osasco, o Osasco São Cristóvão Saúde recebe o Gerdau Minas no Ginásio José Liberatti com a chance de fechar a série diante de sua torcida, após ter vencido o primeiro jogo em Belo Horizonte por 3 sets a 1. Já no Rio de Janeiro, a situação se inverte: o Sesc RJ Flamengo precisa vencer o Dentil Praia Clube no Maracanãzinho para sobreviver na competição, já que a equipe mineira domina a série por 1 a 0 após o triunfo por 3 a 0 em Uberlândia. Para paulistas e mineiras do Triângulo, a vitória hoje vale o passaporte direto para a grande decisão.</p>
-            </div>    
+            <hr>
+            <div class="terceira_noticia">
+                <div class="imagens">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMGNyVx05qamMC3Os3eCR2tAZPaIgFFtfFMw&s" alt="Imagem">
+                </div>
+                <div class="textos">
+                    <h3>Sexta de Decisões: Osasco e Praia Clube buscam carimbar vaga na final da Superliga em noite de clássicos</h3>
+                    <p class="texto_paragrafo">A Superliga Feminina pode conhecer suas finalistas nesta sexta-feira, 17 de abril, em uma noite de tensão máxima. Em Osasco, o Osasco São Cristóvão Saúde recebe o Gerdau Minas no Ginásio José Liberatti com a chance de fechar a série diante de sua torcida, após ter vencido o primeiro jogo em Belo Horizonte por 3 sets a 1. Já no Rio de Janeiro, a situação se inverte: o Sesc RJ Flamengo precisa vencer o Dentil Praia Clube no Maracanãzinho para sobreviver na competição, já que a equipe mineira domina a série por 1 a 0 após o triunfo por 3 a 0 em Uberlândia. Para paulistas e mineiras do Triângulo, a vitória hoje vale o passaporte direto para a grande decisão.</p>
+                </div>    
+            </div>
+            <hr>
+            <button class="botao-mostrar-mais">MOSTRAR MAIS</button>
         </div>
-        <hr>
-        <button class="botoes">MOSTRAR MAIS</button>
-    </div>
+    </main>
+    
     <footer class="rodape">
         <div>
             <h1>VolleyNews</h1>
-            <p style="text-align: center;">© Copyright 2026 - VolleyNews</p>
+            <p>© Copyright 2026 - VolleyNews</p>
         </div>
 
     </footer>
     <script src="script.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
