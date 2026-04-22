@@ -1,239 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabela de Jogos da Superliga Feminina 2025–2026</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fontes -->
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        .cabecalho{
-            background-color: #1f4e79;
-            display: flex;
-            height: 50px;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 30px;
-            position: relative;
-        }
-        .conteudo-cabecalho {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            padding: 0 160px;
-        }
-        .esquerda_cabecalho,
-        .direita_cabecalho {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .botoes {
-            background-color: #1f4e79;
-            border: 1px solid #2b6aa3;
-            color: white;
-            font-weight: 500;
-            border-radius: 5px;
-            height: 30px;
-            padding: 0 10px;
-
-            display: flex;
-            align-items: center;   /* centraliza vertical */
-            justify-content: center; /* centraliza horizontal */
-        }
-        .rodape{
-            display: flex;
-            background-color: #1f4e79;
-            color: white;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-            padding: 0 20px;
-            height: 150px;
-            margin-top: 30px;
-        }
-        .esquerda_cabecalho{
-            text-align: left;
-        }
-        .h1-titulo-cabecalho {
-            font-family: 'Instrument Serif', serif;
-            color: white;
-        }
-        .titulo-cabecalho{
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .bola-de-volei {
-            color: white;
-            width: 30px;
-            height: 30px;
-        }
-        .direita_cabecalho{
-            text-align: right;
-        }
-        </style>
 </head>
-<body>
-        <header class="cabecalho">
-        <div class="conteudo-cabecalho">
-            <div class="esquerda_cabecalho">
-                <button class="botoes">
-                    <i data-lucide="menu"></i>  
-                </button>
-                <button class="botoes">
-                    <i data-lucide="shield"></i>  
-                    Times
-                </button>
-            </div>
-            <div class="titulo-cabecalho">
-                <h1 class="h1-titulo-cabecalho">VolleyNews</h1>
-                <i class="bola-de-volei" data-lucide="volleyball"></i>  
-            </div>
-            
-            <div class="direita_cabecalho">
-                <button class="botoes">
-                    <i data-lucide="search"></i>
-                    BUSCAR
-                </button>
-            </div>
+
+<body class="bg-gray-100">
+
+    <!-- HEADER -->
+    <header class="bg-[#1f4e79] py-[15px] px-[20px]">
+    
+    <div class="max-w-[1200px] mx-auto flex justify-between items-center">
+
+        <!-- ESQUERDA -->
+        <div class="flex items-center gap-[15px]">
+            <button class="bg-transparent border border-[#4f84b3] text-white px-[14px] py-[8px] rounded-[6px] flex items-center gap-[6px] cursor-pointer transition duration-300 hover:bg-[#2b6aa3]">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <button class="bg-transparent border border-[#4f84b3] text-white px-[14px] py-[8px] rounded-[6px] flex items-center gap-[6px] cursor-pointer transition duration-300 hover:bg-[#2b6aa3]">
+                <i data-lucide="shield"></i>
+                Times
+            </button>
         </div>
-    </header>
-    <div class="noticia">
-        <div class="titulo_noticia">
-            <h1 class="titulo">Tabela de Jogos da Superliga Feminina 2025–2026</h1>
-            <p class="descricao_titulo">Acompanhe todos os confrontos da Superliga Feminina de Vôlei 2025–2026 em um só lugar. Confira datas, horários e duelos das equipes ao longo da competição, incluindo fases decisivas, com destaque para clubes como Dentil Praia Clube, Sesc RJ Flamengo, Osasco São Cristóvão Saúde e Gerdau Minas. Ideal para acompanhar cada rodada e não perder nenhum detalhe da disputa pelo título.</p>
-            <hr>
+
+        <!-- CENTRO -->
+        <div class="flex items-center gap-[10px]">
+            <h1 class="text-white text-xl font-bold" style="font-family: 'Instrument Serif', serif;">
+                VolleyNews
+            </h1>
+            <i class="text-white w-[28px] h-[28px]" data-lucide="volleyball"></i>
         </div>
-        <div class="tabela_jogos">
-            <table class="tabela">
-                <thead>
+
+        <!-- DIREITA -->
+        <div class="flex items-center gap-[15px]">
+            <button class="bg-transparent border border-[#4f84b3] text-white px-[14px] py-[8px] rounded-[6px] flex items-center gap-[6px] cursor-pointer transition duration-300 hover:bg-[#2b6aa3]">
+                <i data-lucide="search"></i>
+                BUSCAR
+            </button>
+        </div>
+
+    </div>
+
+</header>
+
+    <!-- CONTEÚDO -->
+    <div class="max-w-5xl mx-auto mt-10 bg-white p-6 rounded-xl shadow">
+
+        <!-- TÍTULO -->
+        <div>
+            <h1 class="text-3xl font-bold mb-2">
+                Tabela de Jogos da Superliga Feminina 2025–2026
+            </h1>
+
+            <p class="text-gray-600 mb-4">
+                Acompanhe todos os confrontos da Superliga Feminina de Vôlei 2025–2026 em um só lugar. Confira datas, horários e duelos das equipes ao longo da competição.
+            </p>
+
+            <hr class="mb-6">
+        </div>
+
+        <!-- TABELA -->
+        <div class="overflow-x-auto">
+            <table class="w-full text-left border border-gray-200">
+
+                <thead class="bg-[#1f4e79] text-white">
                     <tr>
-                        <th>Equipe</th>
-                        <th>PJ</th>
-                        <th>V</th>
-                        <th>D</th>
-                        <th>S</th>
-                        <th>Pts</th>
+                        <th class="p-3">Equipe</th>
+                        <th class="p-3">PJ</th>
+                        <th class="p-3">V</th>
+                        <th class="p-3">D</th>
+                        <th class="p-3">S</th>
+                        <th class="p-3">Pts</th>
                     </tr>
                 </thead>
+
                 <tbody>
-                    <tr>
-                        <td>1 Sesc Flamengo</td>
-                        <td>22</td>
-                        <td>19</td>
-                        <td>3</td>
-                        <td>60:17</td>
-                        <td>55</td>
-                    </tr>
-                    <tr>
-                        <td>2 Minas</td>
-                        <td>22</td>
-                        <td>18</td>
-                        <td>4</td>
-                        <td>59:22</td>
-                        <td>54</td>
-                    </tr>
-                    <tr>
-                        <td>3 Osasco</td>
-                        <td>22</td>
-                        <td>16</td>
-                        <td>6</td>
-                        <td>54:30</td>
-                        <td>49</td>
-                    </tr>
-                    <tr>
-                        <td>4 Praia Clube</td>
-                        <td>22</td>
-                        <td>16</td>
-                        <td>6</td>
-                        <td>51:25</td>
-                        <td>47</td>
-                    </tr>
-                    <tr>
-                        <td>5 Sesi Bauru</td>
-                        <td>22</td>
-                        <td>14</td>
-                        <td>8</td>
-                        <td>45:33</td>
-                        <td>40</td>
-                    </tr>
-                     <tr>
-                        <td>6 Fluminense</td>
-                        <td>22</td>
-                        <td>14</td>
-                        <td>8</td>
-                        <td>47:40</td>
-                        <td>35</td>
-                    </tr>
-                    <tr>
-                        <td>7 Unilife Maringá</td>
-                        <td>22</td>
-                        <td>10</td>
-                        <td>12</td>
-                        <td>38:43</td>
-                        <td>31</td>
-                    </tr>
-                    <tr>
-                        <td>8 Batavo Mackenzie</td>
-                        <td>22</td>
-                        <td>9</td>
-                        <td>13</td>
-                        <td>35:46</td>
-                        <td>27</td>
-                    </tr>
-                    <tr>
-                        <td>9 Brasília Vôlei</td>
-                        <td>22</td>
-                        <td>7</td>
-                        <td>15</td>
-                        <td>33:52</td>
-                        <td>21</td>
-                    </tr>
-                    <tr>
-                        <td>10 Barueri</td>
-                        <td>22</td>
-                        <td>5</td>
-                        <td>17</td>
-                        <td>30:55</td>
-                        <td>19</td>
-                    </tr>
-                    <tr>
-                        <td>11 Tijuca</td>
-                        <td>22</td>
-                        <td>3</td>
-                        <td>19</td>
-                        <td>22:62</td>
-                        <td>12</td>
-                    </tr>
-                    <tr>
-                        <td>12 Renasce Sorocaba</td>
-                        <td>22</td>
-                        <td>1</td>
-                        <td>21</td>
-                        <td>16:65</td>
-                        <td>6</td>
-                    </tr>
+                    <tr class="border-t"><td class="p-3">1 Sesc Flamengo</td><td>22</td><td>19</td><td>3</td><td>60:17</td><td>55</td></tr>
+                    <tr class="border-t"><td class="p-3">2 Minas</td><td>22</td><td>18</td><td>4</td><td>59:22</td><td>54</td></tr>
+                    <tr class="border-t"><td class="p-3">3 Osasco</td><td>22</td><td>16</td><td>6</td><td>54:30</td><td>49</td></tr>
+                    <tr class="border-t"><td class="p-3">4 Praia Clube</td><td>22</td><td>16</td><td>6</td><td>51:25</td><td>47</td></tr>
+                    <tr class="border-t"><td class="p-3">5 Sesi Bauru</td><td>22</td><td>14</td><td>8</td><td>45:33</td><td>40</td></tr>
+                    <tr class="border-t"><td class="p-3">6 Fluminense</td><td>22</td><td>14</td><td>8</td><td>47:40</td><td>35</td></tr>
+                    <tr class="border-t"><td class="p-3">7 Unilife Maringá</td><td>22</td><td>10</td><td>12</td><td>38:43</td><td>31</td></tr>
+                    <tr class="border-t"><td class="p-3">8 Batavo Mackenzie</td><td>22</td><td>9</td><td>13</td><td>35:46</td><td>27</td></tr>
+                    <tr class="border-t"><td class="p-3">9 Brasília Vôlei</td><td>22</td><td>7</td><td>15</td><td>33:52</td><td>21</td></tr>
+                    <tr class="border-t"><td class="p-3">10 Barueri</td><td>22</td><td>5</td><td>17</td><td>30:55</td><td>19</td></tr>
+                    <tr class="border-t"><td class="p-3">11 Tijuca</td><td>22</td><td>3</td><td>19</td><td>22:62</td><td>12</td></tr>
+                    <tr class="border-t"><td class="p-3">12 Renasce Sorocaba</td><td>22</td><td>1</td><td>21</td><td>16:65</td><td>6</td></tr>
                 </tbody>
+
             </table>
-
         </div>
+
     </div>
-    <footer class="rodape">
-        <div>
-            <h1>VolleyNews</h1>
-            <p>© Copyright 2026 - VolleyNews</p>
-        </div>
 
+    <!-- RODAPÉ -->
+    <footer class="bg-[#1f4e79] text-white flex flex-col items-center justify-center h-[150px] mt-10">
+        <h1 class="text-xl font-bold">VolleyNews</h1>
+        <p class="text-sm">© Copyright 2026 - VolleyNews</p>
     </footer>
+
+    <!-- Ícones -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         lucide.createIcons();
     </script>
+
 </body>
 </html>
