@@ -1,207 +1,352 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Osasco São Cristóvão Saúde VS Gerdau Minas</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+
     <style>
-        .cabecalho{
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f7f7f7;
+            color: #222;
+        }
+
+        /* HEADER */
+        .cabecalho {
             background-color: #1f4e79;
-            display: flex;
-            height: 50px;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 30px;
-            position: relative;
+            padding: 15px 20px;
         }
+
         .conteudo-cabecalho {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            width: 100%;
-            padding: 0 160px;
+            align-items: center;
         }
+
         .esquerda_cabecalho,
-        .direita_cabecalho {
+        .direita_cabecalho,
+        .titulo-cabecalho {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-        .botoes {
-            background-color: #1f4e79;
-            border: 1px solid #2b6aa3;
-            color: white;
-            font-weight: 500;
-            border-radius: 5px;
-            height: 30px;
-            padding: 0 10px;
 
-            display: flex;
-            align-items: center;   /* centraliza vertical */
-            justify-content: center; /* centraliza horizontal */
+        .titulo-cabecalho {
+            gap: 10px;
         }
-        .rodape{
-            display: flex;
-            background-color: #1f4e79;
-            color: white;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-            padding: 0 20px;
-            height: 150px;
-            margin-top: 30px;
-        }
-        .esquerda_cabecalho{
-            text-align: left;
-        }
+
         .h1-titulo-cabecalho {
             font-family: 'Instrument Serif', serif;
             color: white;
+            font-size: 2rem;
         }
-        .titulo-cabecalho{
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
 
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
         .bola-de-volei {
             color: white;
-            width: 30px;
-            height: 30px;
+            width: 28px;
+            height: 28px;
         }
-        .direita_cabecalho{
-            text-align: right;
+
+        .botoes {
+            background-color: transparent;
+            border: 1px solid #4f84b3;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+            align-items: center;
         }
-        </style>
+
+        .botoes:hover {
+            background-color: #2b6aa3;
+        }
+
+        /* CONTEÚDO */
+        .noticia {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background-color: white;
+        }
+
+        .titulo {
+            font-family: 'Instrument Serif', serif;
+            font-size: 2.3rem;
+            margin-bottom: 15px;
+        }
+
+        .subtitulo {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 400;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .descricao_titulo {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        hr {
+            margin: 25px 0;
+            border: none;
+            border-top: 1px solid #ddd;
+        }
+
+        /* VÍDEO */
+        .video_youtube iframe {
+            width: 100%;
+            height: 450px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+
+        /* PARÁGRAFOS */
+        .paragrafo1,
+        .paragrafo2,
+        .paragrafo3 {
+            margin-bottom: 30px;
+        }
+
+        .texto {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .imagem1,
+        .imagem2,
+        .imagem3 {
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+        }
+
+        /* TABELA */
+        .titulo_tabela {
+            font-family: 'Oswald', sans-serif;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+        }
+
+        th {
+            background-color: #1f4e79;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+
+        /* RODAPÉ */
+        .rodape {
+            background-color: #1f4e79;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            .conteudo-cabecalho {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .titulo {
+                font-size: 1.8rem;
+            }
+
+            .video_youtube iframe {
+                height: 250px;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 <body>
-        <header class="cabecalho">
+
+    <header class="cabecalho">
         <div class="conteudo-cabecalho">
             <div class="esquerda_cabecalho">
                 <button class="botoes">
-                    <i data-lucide="menu"></i>  
+                    <i data-lucide="menu"></i>
                 </button>
                 <button class="botoes">
-                    <i data-lucide="shield"></i>  
+                    <i data-lucide="shield"></i>
                     Times
                 </button>
             </div>
+
             <div class="titulo-cabecalho">
                 <h1 class="h1-titulo-cabecalho">VolleyNews</h1>
-                <i class="bola-de-volei" data-lucide="volleyball"></i>  
+                <i class="bola-de-volei" data-lucide="volleyball"></i>
             </div>
-            
+
             <div class="direita_cabecalho">
                 <button class="botoes">
                     <i data-lucide="search"></i>
-                    BUSCAR
+                    Buscar
                 </button>
             </div>
         </div>
     </header>
-    <div class="noticia">
-        <div class="titulo_noticia">
-            <h1 class="titulo">Clássico das Multidões abre semifinal da Superliga com duelo eletrizante entre Osasco e Minas</h1>
-            <h3 class="subtitulo">Com ginásio lotado e estrelas da Seleção em quadra, confronto promete alto nível e equilíbrio na briga por vaga na final</h3>
-            <p class="descricao_titulo">Osasco São Cristóvão Saúde e Gerdau Minas iniciam a semifinal da Superliga em um dos confrontos mais tradicionais do vôlei nacional, marcado por rivalidade, técnica e emoção.</p>
-            <hr>
-        </div>
-        <div class="video_youtube">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/g3riOh0XDD4?si=j6GcmjU2xsqksSo-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+    <div class="noticia">
+        <h1 class="titulo">Clássico das Multidões abre semifinal da Superliga com duelo eletrizante entre Osasco e Minas</h1>
+
+        <h3 class="subtitulo">
+            Com ginásio lotado e estrelas da Seleção em quadra, confronto promete alto nível e equilíbrio
+        </h3>
+
+        <p class="descricao_titulo">
+            Osasco São Cristóvão Saúde e Gerdau Minas iniciam a semifinal da Superliga em um dos confrontos mais tradicionais do vôlei nacional.
+        </p>
+
+        <hr>
+
+        <div class="video_youtube">
+            <iframe src="https://www.youtube.com/embed/g3riOh0XDD4" allowfullscreen></iframe>
         </div>
+
         <div class="paragrafo1">
-            <p class="texto">O vôlei feminino brasileiro será palco de mais um capítulo de uma de suas maiores rivalidades. Nesta segunda-feira, 13 de abril, o Osasco São Cristóvão Saúde recebe o Gerdau Minas no Ginásio José Liberatti para o primeiro jogo da semifinal da Superliga. Com ingressos esgotados, a expectativa é de casa cheia e um ambiente intenso, impulsionado pela torcida apaixonada que transforma o local em um verdadeiro caldeirão.</p>
+            <p class="texto">
+                O vôlei feminino brasileiro será palco de mais um capítulo de uma de suas maiores rivalidades...
+            </p>
             <img class="imagem1" src="https://assets.bileto.sympla.com.br/eventmanager/production/3i0j77rm02avhde70trffkrr43nuuom9b095vgsndmrqkugjg7ui6apt0cfkn0qpb91clcv3spojvctkel8mfr45dl8hv7jvo4qhcml.webp">
         </div>
+
         <div class="paragrafo2">
-            <p class="texto">Dentro de quadra, o duelo reúne algumas das principais atletas do país, muitas delas com passagens marcantes pela Seleção Brasileira. O equilíbrio recente entre as equipes aumenta ainda mais a expectativa, já que os confrontos anteriores foram marcados por disputas acirradas e placares apertados. Tanto Osasco quanto Minas chegam embalados, confiantes em seus elencos e estratégias para sair na frente na série melhor de três.</p>
+            <p class="texto">
+                Dentro de quadra, o duelo reúne algumas das principais atletas do país...
+            </p>
             <img class="imagem2" src="https://webvolei.com.br/wp-content/uploads/2026/04/minasosascosemi1d-845x475.webp">
         </div>
+
         <div class="paragrafo3">
-            <p class="texto">Além da qualidade técnica, o confronto carrega o peso de uma rivalidade histórica, considerada uma das mais emblemáticas do voleibol nacional. Cada ponto disputado promete emoção, intensidade e alto nível de jogo, ingredientes que fazem desse clássico um espetáculo imperdível. A partida de abertura pode definir o tom da semifinal e encaminhar quem terá vantagem na busca por uma vaga na grande final da Superliga.</p>
-            <img class="imagem3" src="https://imagens.ne10.uol.com.br/veiculos/_midias/jpg/2026/04/13/55180629581_1091e85e15_k-36629854.jpg?20260421142909?ims=800x533">
-            <hr>
+            <p class="texto">
+                Além da qualidade técnica, o confronto carrega o peso de uma rivalidade histórica...
+            </p>
+            <img class="imagem3" src="https://imagens.ne10.uol.com.br/veiculos/_midias/jpg/2026/04/13/55180629581_1091e85e15_k-36629854.jpg">
         </div>
+
+        <hr>
+
         <h2 class="titulo_tabela">Jogadoras no Ranking da Superliga</h2>
-        <div class="tabela_pontos">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Jogadora</th>
-                        <th>Time</th>
-                        <th>Posição</th>
-                        <th>N° Ranking</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td rowspan="3">Júlia Kudiess</td>
-                        <td rowspan="3">Gerdau Minas</td>
-                        <td rowspan="3">Central</td>
-                        <td>🥇 1º lugar em bloqueios</td>
-                    </tr>
-                    <tr>
-                        <td>🥇 1º lugar em bloqueio mais eficiente</td>
-                    </tr>
-                    <tr>
-                        <td>
-                          🥇 1º lugar em aproveitamento de ataque  
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Nyeme Costa</td>
-                        <td>Gerdau Minas</td>
-                        <td>Líbero</td>
-                        <td>🥇 1º lugar em passe mais eficiente</td>
-                    </tr>
-                    <tr>
-                        <td>Pri Daroit</td>
-                        <td>Gerdau Minas</td>
-                        <td>Ponteira</td>
-                        <td>🥇 1º lugar em saque mais eficiente</td>
-                    </tr>
-                    <tr>
-                        <td>Bianca Cugno</td>
-                        <td>Osasco</td>
-                        <td>Oposta</td>
-                        <td>🥈 2ª maior pontuadora da Superliga</td>
-                    </tr>
-                    <tr>
-                        <td>Camila Brait</td>
-                        <td>Osasco</td>
-                        <td>Líbero</td>
-                        <td>🥈 2ª lugar em passe mais eficiente</td>
-                    </tr>
-                    <tr>
-                        <td>Mayara</td>
-                        <td>Osasco</td>
-                        <td>Central</td>
-                        <td>🥇 1º lugar em ataque mais eficiente</td>
-                    </tr>
-                    <tr>
-                        <td>Larissa</td>
-                        <td>Osasco</td>
-                        <td>Central</td>
-                        <td>🥉 3° em média de bloqueios por set</td>
-                    </tr>
 
-                </tbody>
-            </table>
-        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Jogadora</th>
+                    <th>Time</th>
+                    <th>Posição</th>
+                    <th>Ranking</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Júlia Kudiess</td>
+                    <td>Gerdau Minas</td>
+                    <td>Central</td>
+                    <td>🥇 1º lugar em bloqueios</td>
+                </tr>
+                <tr>
+                    <td>Júlia Kudiess</td>
+                    <td>Gerdau Minas</td>
+                    <td>Central</td>
+                    <td>🥇 1º lugar em bloqueio mais eficiente</td>
+                </tr>
+                <tr>
+                    <td>Júlia Kudiess</td>
+                    <td>Gerdau Minas</td>
+                    <td>Central</td>
+                    <td>🥇 1º lugar em aproveitamento de ataque</td>
+                </tr>
+
+                <tr>
+                    <td>Nyeme Costa</td>
+                    <td>Gerdau Minas</td>
+                    <td>Líbero</td>
+                    <td>🥇 1º lugar em passe mais eficiente</td>
+                </tr>
+
+                <tr>
+                    <td>Pri Daroit</td>
+                    <td>Gerdau Minas</td>
+                    <td>Ponteira</td>
+                    <td>🥇 1º lugar em saque mais eficiente</td>
+                </tr>
+
+                <tr>
+                    <td>Bianca Cugno</td>
+                    <td>Osasco</td>
+                    <td>Oposta</td>
+                    <td>🥈 2ª maior pontuadora da Superliga</td>
+                </tr>
+
+                <tr>
+                    <td>Camila Brait</td>
+                    <td>Osasco</td>
+                    <td>Líbero</td>
+                    <td>🥈 2º lugar em passe mais eficiente</td>
+                </tr>
+
+                <tr>
+                    <td>Mayara</td>
+                    <td>Osasco</td>
+                    <td>Central</td>
+                    <td>🥇 1º lugar em ataque mais eficiente</td>
+                </tr>
+
+                <tr>
+                    <td>Larissa</td>
+                    <td>Osasco</td>
+                    <td>Central</td>
+                    <td>🥉 3º em média de bloqueios por set</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <footer class="rodape">
-        <div>
-            <h1>VolleyNews</h1>
-            <p>© Copyright 2026 - VolleyNews</p>
-        </div>
 
+    <footer class="rodape">
+        <h1>VolleyNews</h1>
+        <p>© Copyright 2026 - VolleyNews</p>
     </footer>
+
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         lucide.createIcons();

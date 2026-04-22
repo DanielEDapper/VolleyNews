@@ -1,128 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VolleyNews</title>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        .cabecalho{
-            background-color: #1f4e79;
-            display: flex;
-            height: 50px;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 30px;
-            position: relative;
-        }
-        .conteudo-cabecalho {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            padding: 0 160px;
-        }
-        .esquerda_cabecalho,
-        .direita_cabecalho {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .botoes {
-            background-color: #1f4e79;
-            border: 1px solid #2b6aa3;
-            color: white;
-            font-weight: 500;
-            border-radius: 5px;
-            height: 30px;
-            padding: 0 10px;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VolleyNews</title>
 
-            display: flex;
-            align-items: center;   /* centraliza vertical */
-            justify-content: center; /* centraliza horizontal */
-        }
-        .rodape{
-            display: flex;
-            background-color: #1f4e79;
-            color: white;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-            padding: 0 20px;
-            height: 150px;
-            margin-top: 30px;
-        }
-        .esquerda_cabecalho{
-            text-align: left;
-        }
-        .h1-titulo-cabecalho {
-            font-family: 'Instrument Serif', serif;
-            color: white;
-        }
-        .titulo-cabecalho{
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
 
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .bola-de-volei {
-            color: white;
-            width: 30px;
-            height: 30px;
-        }
-        .direita_cabecalho{
-            text-align: right;
-        }
+<style>
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .noticias{
-            padding: 0 190px;
-        }
-        .primeira_noticia,
-        .segunda_noticia,
-        .terceira_noticia {
-            display: flex;
-            align-items: flex-start;
-            gap: 600px; 
-        }
-        .imagens{
-            width: 100px;
-            height: auto;
-            border-radius: 8px;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #222;
+}
 
-        .textos{
-            font-family: 'Oswald', sans-serif;
-            font-weight: 700;
-            color: #06aa48;
-        }
-        .texto_paragrafo{
-            text-align: justify;
-        }
+/* HEADER */
+.cabecalho {
+    background-color: #1f4e79;
+    padding: 15px 20px;
+}
 
-        .botao-mostrar-mais{
-            background-color: #1f4e79;
-            border: 1px solid #2b6aa3;
-            color: white;
-            font-weight: 600;
-            border-radius: 5px;
-            height: 40px;
-            padding: 0 20px;
+.conteudo-cabecalho {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-            display: flex;
-            align-items: center;
-            justify-items: center;
-            justify-self: center;
-        }
-         /*-------------*/
-        .carousel {
-                position: relative;
-                width: 80%;
-                margin: 40px auto;
-                overflow: hidden;
+.esquerda_cabecalho,
+.direita_cabecalho,
+.titulo-cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.titulo-cabecalho {
+    gap: 10px;
+}
+
+.h1-titulo-cabecalho {
+    font-family: 'Instrument Serif', serif;
+    color: white;
+}
+
+.bola-de-volei {
+    color: white;
+    width: 28px;
+    height: 28px;
+}
+
+.botoes {
+    background: transparent;
+    border: 1px solid #4f84b3;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    display: flex;
+    gap: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    align-items: center;
+}
+
+.botoes:hover {
+    background-color: #2b6aa3;
+}
+
+/* CARROSSEL */
+.carousel {
+    max-width: 1200px;
+    margin: 30px auto;
+    position: relative;
+    overflow: hidden;
         }
 
         .slides {
@@ -194,52 +153,120 @@
         .dot.active {
         background: #555;
         }
-    </style>
-</head>
-<body>
-    <header class="cabecalho">
-        <div class="conteudo-cabecalho">
-            <div class="esquerda_cabecalho">
-                <button class="botoes">
-                    <i data-lucide="menu"></i>  
-                </button>
-                <button class="botoes">
-                    <i data-lucide="shield"></i>  
-                    Times
-                </button>
-            </div>
-            <div class="titulo-cabecalho">
-                <h1 class="h1-titulo-cabecalho">VolleyNews</h1>
-                <i class="bola-de-volei" data-lucide="volleyball"></i>  
-            </div>
-            
-            <div class="direita_cabecalho">
-                <button class="botoes">
-                    <i data-lucide="search"></i>
-                    BUSCAR
-                </button>
-            </div>
-        </div>
-    </header>
-    <div class="carousel">
-        <div class="slides">
 
+/* NOTÍCIAS */
+.noticias {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.noticias h1 {
+    text-align: center;
+    color: #1f4e79;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 20px;
+}
+
+.noticias hr {
+    margin: 20px 0;
+}
+
+/* CARD */
+.card-noticia {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+/* IMAGEM */
+.imagens img {
+    width: 180px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* TEXTO */
+.textos {
+    flex: 1;
+}
+
+.texto-titulo {
+    font-family: 'Oswald', sans-serif;
+    color: #06aa48;
+    margin-bottom: 8px;
+}
+
+.texto_paragrafo {
+    font-size: 0.95rem;
+    color: #444;
+    text-align: justify;
+}
+
+/* BOTÃO */
+.botao-mostrar-mais {
+    display: block;
+    margin: 30px auto;
+    background-color: #1f4e79;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.botao-mostrar-mais:hover {
+    background-color: #2b6aa3;
+}
+
+/* RODAPÉ */
+.rodape {
+    background-color: #1f4e79;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="cabecalho">
+    <div class="conteudo-cabecalho">
+        <div class="esquerda_cabecalho">
+            <button class="botoes"><i data-lucide="menu"></i></button>
+            <button class="botoes"><i data-lucide="shield"></i> Times</button>
+        </div>
+
+        <div class="titulo-cabecalho">
+            <h1 class="h1-titulo-cabecalho">VolleyNews</h1>
+            <i class="bola-de-volei" data-lucide="volleyball"></i>
+        </div>
+
+        <div class="direita_cabecalho">
+            <button class="botoes"><i data-lucide="search"></i> Buscar</button>
+        </div>
+    </div>
+</header>
+
+<!-- CARROSSEL -->
+ <div class="carousel">
+        <div class="slides">
             <div class="slide">
                 <img src="https://i.ytimg.com/vi/sDC8zaX74v0/maxresdefault.jpg">
             </div>
-
             <div class="slide">
                 <img src="https://i.ytimg.com/vi/MtANig1DItE/hq720.jpg">
             </div>
-
             <div class="slide">
                 <img src="https://i.ytimg.com/vi/LEJXkx5e6Ms/maxresdefault.jpg">
             </div>
-
             <div class="slide">
                 <img src="https://i.ytimg.com/vi/L0hSRTZscJ0/hq720.jpg">
             </div>
-
         </div>
             <!-- Botões -->
         <button class="prev">&#10094;</button>
@@ -253,59 +280,57 @@
             <span class="dot"></span>
         </div>
         </div>
-    <main>
-        <div class="noticias">
-            <div>
 
-            </div>
-            <h1 style="text-align: center ; color:#1f4e79;;">Principais Notícias</h1>
-            <hr>
-            <div class="primeira_noticia">
-                <div class="imagens">
-                    <img src="https://i.ytimg.com/vi/gcNMGeofpXk/hq720.jpg?v=69e023e9&sqp=CPjhhc8G-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDfDchnxo0dnkYXselXao7pOlkKXw" alt="Imagem">
-                </div>
-                <div class="textos">
-                    <h3 class="texto-titulo">Clássico das Multidões: Osasco e Gerdau Minas abrem semifinal da Superliga em duelo de gigantes</h3>
-                    <p class="texto_paragrafo">A rivalidade mais tradicional do vôlei feminino brasileiro ganha um novo capítulo nesta segunda-feira, dia 13 de abril. O Osasco São Cristóvão Saúde recebe o Gerdau Minas no Ginásio José Liberatti para o jogo de abertura da semifinal da Superliga. Com ingressos esgotados e a promessa de caldeirão lotado, as equipes iniciam a disputa por uma vaga na grande final em um confronto que coloca frente a frente estrelas da Seleção Brasileira e um histórico recente de muito equilíbrio.</p>   
-                </div>   
-            </div>
-            <hr>
-            <div class="segunda_noticia">
-                <div class="imagens">
-                    <img src="https://i.ytimg.com/vi/cAC5RnqO-p8/hq720.jpg?v=69dd3ed0&sqp=COCZ9s4G-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAR9kmIqYISDgtue1XzFcjZvbrqRg" alt="Imagem">
-                </div>
-                <div class="textos">
-                    <h3 class="texto-titulo">Duelo de Campeões: Praia Clube e Sesc Flamengo iniciam batalha por vaga na final em Uberlândia</h3>
-                    <p class="texto_paragrafo">As semifinais da Superliga Feminina de Vôlei começam em clima de decisão no Triângulo Mineiro. Nesta segunda-feira, dia 13 de abril, o Dentil Praia Clube recebe o Sesc RJ Flamengo na Arena Dentil, em Uberlândia, para o primeiro jogo da série melhor de três. O confronto marca o encontro de dois dos projetos mais vitoriosos do vôlei nacional, prometendo ginásio lotado e um duelo tático de alto nível entre as equipes.</p>
-                    
-                </div>   
-            </div>
-            <hr>
-            <div class="terceira_noticia">
-                <div class="imagens">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMGNyVx05qamMC3Os3eCR2tAZPaIgFFtfFMw&s" alt="Imagem">
-                </div>
-                <div class="textos">
-                    <h3 class="texto-titulo">Sexta de Decisões: Osasco e Praia Clube buscam carimbar vaga na final da Superliga em noite de clássicos</h3>
-                    <p class="texto_paragrafo">A Superliga Feminina pode conhecer suas finalistas nesta sexta-feira, 17 de abril, em uma noite de tensão máxima. Em Osasco, o Osasco São Cristóvão Saúde recebe o Gerdau Minas no Ginásio José Liberatti com a chance de fechar a série diante de sua torcida, após ter vencido o primeiro jogo em Belo Horizonte por 3 sets a 1. Já no Rio de Janeiro, a situação se inverte: o Sesc RJ Flamengo precisa vencer o Dentil Praia Clube no Maracanãzinho para sobreviver na competição, já que a equipe mineira domina a série por 1 a 0 após o triunfo por 3 a 0 em Uberlândia. Para paulistas e mineiras do Triângulo, a vitória hoje vale o passaporte direto para a grande decisão.</p>
-                </div>    
-            </div>
-            <hr>
-            <button class="botao-mostrar-mais">MOSTRAR MAIS</button>
-        </div>
-    </main>
-    
-    <footer class="rodape">
-        <div>
-            <h1>VolleyNews</h1>
-            <p>© Copyright 2026 - VolleyNews</p>
-        </div>
+<main class="noticias">
+    <h1>Principais Notícias</h1>
+    <hr>
 
-    </footer>
-    <script src="script.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        lucide.createIcons();
-    </script>
+    <div class="card-noticia">
+        <div class="imagens">
+            <img src="https://i.ytimg.com/vi/gcNMGeofpXk/hq720.jpg">
+        </div>
+        <div class="textos">
+            <h3 class="texto-titulo">Clássico das Multidões</h3>
+            <p class="texto_paragrafo">O Osasco recebe o Gerdau Minas em um duelo decisivo...</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="card-noticia">
+        <div class="imagens">
+            <img src="https://i.ytimg.com/vi/cAC5RnqO-p8/hq720.jpg">
+        </div>
+        <div class="textos">
+            <h3 class="texto-titulo">Duelo de Campeões</h3>
+            <p class="texto_paragrafo">Praia Clube enfrenta o Flamengo em confronto direto...</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="card-noticia">
+        <div class="imagens">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMGNyVx05qamMC3Os3eCR2tAZPaIgFFtfFMw&s">
+        </div>
+        <div class="textos">
+            <h3 class="texto-titulo">Sexta de Decisões</h3>
+            <p class="texto_paragrafo">A Superliga pode definir suas finalistas...</p>
+        </div>
+    </div>
+
+    <button class="botao-mostrar-mais">MOSTRAR MAIS</button>
+</main>
+
+<footer class="rodape">
+    <h1>VolleyNews</h1>
+    <p>© Copyright 2026</p>
+</footer>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+lucide.createIcons();
+</script>
+<script src="script.js"></script>
 </body>
 </html>
