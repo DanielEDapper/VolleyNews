@@ -197,6 +197,65 @@
                 font-size: 0.9rem;
             }
         }
+        .sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background: white;
+    padding: 20px;
+    box-shadow: 5px 0 20px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar h2 {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+    padding: 8px 0;
+    transition: 0.2s;
+}
+
+.sidebar a:hover {
+    color: #1f4e79;
+}
+
+/* destaque */
+.highlight {
+    font-weight: bold;
+    color: #1f4e79;
+}
+
+/* BOTÃO FECHAR */
+.close-btn {
+    align-self: flex-end;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* OVERLAY */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    z-index: 999;
+}
     </style>
 </head>
 <body>
@@ -204,9 +263,9 @@
     <header class="cabecalho">
         <div class="conteudo-cabecalho">
             <div class="esquerda_cabecalho">
-                <button class="botoes">
-                    <i data-lucide="menu"></i>
-                </button>
+                <button class="botoes" onclick="openMenu()">
+    <i data-lucide="menu"></i>
+</button>
                 <button class="botoes">
                     <i data-lucide="shield"></i>
                     Tabela
@@ -226,6 +285,25 @@
             </div>
         </div>
     </header>
+    <div id="sidebar" class="sidebar">
+    <button class="close-btn" onclick="closeMenu()">✕</button>
+
+    <h2>Menu</h2>
+
+    <a href="noticia1.html" onclick="closeMenu()">Notícia 1</a>
+    <a href="noticia2.html" onclick="closeMenu()">Notícia 2</a>
+    <a href="noticia3.html" onclick="closeMenu()">Notícia 3</a>
+    <a href="noticia4.html" onclick="closeMenu()">Notícia 4</a>
+
+    <hr>
+
+    <a href="tabela_jogos.html" class="highlight" onclick="closeMenu()">
+        🏐 Tabela da Superliga
+    </a>
+</div>
+
+<!-- OVERLAY -->
+<div id="overlay" class="overlay" onclick="closeMenu()"></div>
 
     <div class="noticia">
         <h1 class="titulo">Clássico das Multidões abre semifinal da Superliga com duelo eletrizante entre Osasco e Minas</h1>
@@ -352,5 +430,16 @@
     <script>
         lucide.createIcons();
     </script>
+    <script>
+function openMenu() {
+    document.getElementById("sidebar").style.left = "0";
+    document.getElementById("overlay").style.display = "block";
+}
+
+function closeMenu() {
+    document.getElementById("sidebar").style.left = "-300px";
+    document.getElementById("overlay").style.display = "none";
+}
+</script>
 </body>
 </html>

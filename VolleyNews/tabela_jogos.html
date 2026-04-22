@@ -1,119 +1,151 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabela de Jogos da Superliga Feminina 2025–2026</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VolleyNews - Tabela</title>
 
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Fontes -->
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+.font-title { font-family: 'Instrument Serif', serif; }
+.font-oswald { font-family: 'Oswald', sans-serif; }
+</style>
 </head>
 
 <body class="bg-gray-100">
 
-    <!-- HEADER -->
-    <header class="bg-[#1f4e79] py-[15px] px-[20px]">
-    
-    <div class="max-w-[1200px] mx-auto flex justify-between items-center">
+<!-- HEADER -->
+<header class="bg-[#1f4e79] py-[15px] px-[20px]">
+  <div class="max-w-[1200px] mx-auto flex justify-between items-center">
 
-        <!-- ESQUERDA -->
-        <div class="flex items-center gap-[15px]">
-            <button class="bg-transparent border border-[#4f84b3] text-white px-[14px] py-[8px] rounded-[6px] flex items-center gap-[6px] cursor-pointer transition duration-300 hover:bg-[#2b6aa3]">
-                <i data-lucide="menu"></i>
-            </button>
+    <!-- ESQUERDA -->
+    <div class="flex items-center gap-[15px]">
+      <button onclick="openMenu()"
+        class="border border-[#4f84b3] text-white px-[14px] py-[8px] rounded-[6px] flex items-center gap-[6px] hover:bg-[#2b6aa3] transition">
+        ☰
+      </button>
 
-            <button class="bg-transparent border border-[#4f84b3] text-white px-[14px] py-[8px] rounded-[6px] flex items-center gap-[6px] cursor-pointer transition duration-300 hover:bg-[#2b6aa3]">
-                <i data-lucide="shield"></i>
-                Tabela
-            </button>
-        </div>
-
-        <!-- CENTRO -->
-        <div class="flex items-center gap-[10px]">
-            <h1 class="text-white text-xl font-bold" style="font-family: 'Instrument Serif', serif;">
-                VolleyNews
-            </h1>
-            <i class="text-white w-[28px] h-[28px]" data-lucide="volleyball"></i>
-        </div>
-
-        <!-- DIREITA -->
-        <div class="flex items-center gap-[15px]">
-            <button class="bg-transparent border border-[#4f84b3] text-white px-[14px] py-[8px] rounded-[6px] flex items-center gap-[6px] cursor-pointer transition duration-300 hover:bg-[#2b6aa3]">
-                <i data-lucide="search"></i>
-                BUSCAR
-            </button>
-        </div>
-
+      <a href="tabela_jogos.html"
+        class="border border-[#4f84b3] text-white px-[14px] py-[8px] rounded-[6px] flex items-center gap-[6px] hover:bg-[#2b6aa3] transition">
+        🛡️ Tabela
+      </a>
     </div>
 
+    <!-- CENTRO -->
+    <div class="flex items-center gap-[10px]">
+      <h1 class="text-white text-xl font-bold font-title">VolleyNews</h1>
+      <span class="text-white text-xl">🏐</span>
+    </div>
+
+    <!-- DIREITA -->
+    <button
+      class="border border-[#4f84b3] text-white px-[14px] py-[8px] rounded-[6px] flex items-center gap-[6px] hover:bg-[#2b6aa3] transition">
+      🔍 Buscar
+    </button>
+
+  </div>
 </header>
 
-    <!-- CONTEÚDO -->
-    <div class="max-w-5xl mx-auto mt-10 bg-white p-6 rounded-xl shadow">
+<!-- SIDEBAR -->
+<div id="sidebar"
+class="fixed top-0 left-[-300px] w-[300px] h-full bg-white p-5 shadow-lg transition-all duration-300 z-[1000] flex flex-col gap-4">
 
-        <!-- TÍTULO -->
-        <div>
-            <h1 class="text-3xl font-bold mb-2">
-                Tabela de Jogos da Superliga Feminina 2025–2026
-            </h1>
+  <button onclick="closeMenu()" class="self-end text-xl">✕</button>
 
-            <p class="text-gray-600 mb-4">
-                Acompanhe todos os confrontos da Superliga Feminina de Vôlei 2025–2026 em um só lugar. Confira datas, horários e duelos das equipes ao longo da competição.
-            </p>
+  <h2 class="text-lg font-bold">Menu</h2>
 
-            <hr class="mb-6">
-        </div>
+  <a href="noticia1.html" onclick="closeMenu()" class="hover:text-[#1f4e79]">Notícia 1</a>
+  <a href="noticia2.html" onclick="closeMenu()" class="hover:text-[#1f4e79]">Notícia 2</a>
+  <a href="noticia3.html" onclick="closeMenu()" class="hover:text-[#1f4e79]">Notícia 3</a>
+  <a href="noticia4.html" onclick="closeMenu()" class="hover:text-[#1f4e79]">Notícia 4</a>
 
-        <!-- TABELA -->
-        <div class="overflow-x-auto">
-            <table class="w-full text-left border border-gray-200">
+  <hr>
 
-                <thead class="bg-[#1f4e79] text-white">
-                    <tr>
-                        <th class="p-3">Equipe</th>
-                        <th class="p-3">PJ</th>
-                        <th class="p-3">V</th>
-                        <th class="p-3">D</th>
-                        <th class="p-3">S</th>
-                        <th class="p-3">Pts</th>
-                    </tr>
-                </thead>
+  <a href="tabela_jogos.html" onclick="closeMenu()" class="font-bold text-[#1f4e79]">
+    🏐 Tabela da Superliga
+  </a>
+</div>
 
-                <tbody>
-                    <tr class="border-t hover:bg-gray-100"><td class="p-3">1 Sesc Flamengo</td><td>22</td><td>19</td><td>3</td><td>60:17</td><td>55</td></tr>
-                    <tr class="border-t hover:bg-gray-100"><td class="p-3">2 Minas</td><td>22</td><td>18</td><td>4</td><td>59:22</td><td>54</td></tr>
-                    <tr class="border-t hover:bg-gray-100"><td class="p-3">3 Osasco</td><td>22</td><td>16</td><td>6</td><td>54:30</td><td>49</td></tr>
-                    <tr class="border-t hover:bg-gray-100"><td class="p-3">4 Praia Clube</td><td>22</td><td>16</td><td>6</td><td>51:25</td><td>47</td></tr>
-                    <tr class="border-t hover:bg-gray-100"><td class="p-3">5 Sesi Bauru</td><td>22</td><td>14</td><td>8</td><td>45:33</td><td>40</td></tr>
-                    <tr class="border-t hover:bg-gray-100"><td class="p-3">6 Fluminense</td><td>22</td><td>14</td><td>8</td><td>47:40</td><td>35</td></tr>
-                    <tr class="border-t hover:bg-gray-100"><td class="p-3">7 Unilife Maringá</td><td>22</td><td>10</td><td>12</td><td>38:43</td><td>31</td></tr>
-                    <tr class="border-t hover:bg-gray-100"><td class="p-3">8 Batavo Mackenzie</td><td>22</td><td>9</td><td>13</td><td>35:46</td><td>27</td></tr>
-                    <tr class="border-t hover:bg-gray-100"><td class="p-3">9 Brasília Vôlei</td><td>22</td><td>7</td><td>15</td><td>33:52</td><td>21</td></tr>
-                    <tr class="border-t hover:bg-gray-100"><td class="p-3">10 Barueri</td><td>22</td><td>5</td><td>17</td><td>30:55</td><td>19</td></tr>
-                    <tr class="border-t hover:bg-gray-100"><td class="p-3">11 Tijuca</td><td>22</td><td>3</td><td>19</td><td>22:62</td><td>12</td></tr>
-                    <tr class="border-t hover:bg-gray-100"><td class="p-3">12 Renasce Sorocaba</td><td>22</td><td>1</td><td>21</td><td>16:65</td><td>6</td></tr>
-                </tbody>
+<!-- OVERLAY -->
+<div id="overlay"
+class="fixed inset-0 bg-black/40 hidden z-[999]"
+onclick="closeMenu()"></div>
 
-            </table>
-        </div>
+<!-- CONTEÚDO -->
+<div class="max-w-5xl mx-auto mt-10 bg-white p-6 rounded-xl shadow">
 
-    </div>
+  <h1 class="text-3xl font-bold mb-2">
+    Tabela de Jogos da Superliga Feminina 2025–2026
+  </h1>
 
-    <!-- RODAPÉ -->
-    <footer class="bg-[#1f4e79] text-white flex flex-col items-center justify-center h-[150px] mt-10">
-        <h1 class="text-xl font-bold">VolleyNews</h1>
-        <p class="text-sm">© Copyright 2026 - VolleyNews</p>
-    </footer>
+  <p class="text-gray-600 mb-4">
+    Acompanhe todos os confrontos da Superliga Feminina de Vôlei 2025–2026 em um só lugar.
+  </p>
 
-    <!-- Ícones -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        lucide.createIcons();
-    </script>
+  <hr class="mb-6">
+
+  <!-- TABELA -->
+  <div class="overflow-x-auto">
+    <table class="w-full border border-gray-200 text-left">
+
+      <thead class="bg-[#1f4e79] text-white">
+        <tr>
+          <th class="p-3">Equipe</th>
+          <th class="p-3">PJ</th>
+          <th class="p-3">V</th>
+          <th class="p-3">D</th>
+          <th class="p-3">S</th>
+          <th class="p-3">Pts</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr class="border-t hover:bg-gray-100"><td class="p-3">1 Sesc Flamengo</td><td>22</td><td>19</td><td>3</td><td>60:17</td><td>55</td></tr>
+        <tr class="border-t hover:bg-gray-100"><td class="p-3">2 Minas</td><td>22</td><td>18</td><td>4</td><td>59:22</td><td>54</td></tr>
+        <tr class="border-t hover:bg-gray-100"><td class="p-3">3 Osasco</td><td>22</td><td>16</td><td>6</td><td>54:30</td><td>49</td></tr>
+        <tr class="border-t hover:bg-gray-100"><td class="p-3">4 Praia Clube</td><td>22</td><td>16</td><td>6</td><td>51:25</td><td>47</td></tr>
+        <tr class="border-t hover:bg-gray-100"><td class="p-3">5 Sesi Bauru</td><td>22</td><td>14</td><td>8</td><td>45:33</td><td>40</td></tr>
+        <tr class="border-t hover:bg-gray-100"><td class="p-3">6 Fluminense</td><td>22</td><td>14</td><td>8</td><td>47:40</td><td>35</td></tr>
+        <tr class="border-t hover:bg-gray-100"><td class="p-3">7 Unilife Maringá</td><td>22</td><td>10</td><td>12</td><td>38:43</td><td>31</td></tr>
+        <tr class="border-t hover:bg-gray-100"><td class="p-3">8 Batavo Mackenzie</td><td>22</td><td>9</td><td>13</td><td>35:46</td><td>27</td></tr>
+        <tr class="border-t hover:bg-gray-100"><td class="p-3">9 Brasília Vôlei</td><td>22</td><td>7</td><td>15</td><td>33:52</td><td>21</td></tr>
+        <tr class="border-t hover:bg-gray-100"><td class="p-3">10 Barueri</td><td>22</td><td>5</td><td>17</td><td>30:55</td><td>19</td></tr>
+        <tr class="border-t hover:bg-gray-100"><td class="p-3">11 Tijuca</td><td>22</td><td>3</td><td>19</td><td>22:62</td><td>12</td></tr>
+        <tr class="border-t hover:bg-gray-100"><td class="p-3">12 Renasce Sorocaba</td><td>22</td><td>1</td><td>21</td><td>16:65</td><td>6</td></tr>
+      </tbody>
+
+    </table>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-[#1f4e79] text-white text-center py-10 mt-10">
+  <h1 class="text-xl font-bold">VolleyNews</h1>
+  <p>© Copyright 2026</p>
+</footer>
+
+<!-- ICONES -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>lucide.createIcons();</script>
+
+<!-- MENU JS -->
+<script>
+function openMenu() {
+  document.getElementById("sidebar").style.left = "0";
+  document.getElementById("overlay").classList.remove("hidden");
+}
+
+function closeMenu() {
+  document.getElementById("sidebar").style.left = "-300px";
+  document.getElementById("overlay").classList.add("hidden");
+}
+</script>
 
 </body>
 </html>
